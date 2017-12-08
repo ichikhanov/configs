@@ -1,6 +1,11 @@
 execute pathogen#infect()
-set autoread
-set number 
+set autoread   
+set tabstop=4
+set expandtab
+set splitright
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+set number
+let g:pep8_map='<leader>8' 
 nnoremap <F3> :set hlsearch!<CR>
 let mapleader = ","
 let g:mapleader = ","
@@ -12,6 +17,7 @@ syntax enable
 map <F4> :NERDTreeToggle<CR>
 set background=dark
 colorscheme solarized
+filetype plugin indent on
 au BufNewFile, BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
