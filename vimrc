@@ -1,4 +1,5 @@
 execute pathogen#infect()
+set termguicolors
 set autoread   
 set tabstop=4
 set expandtab
@@ -15,8 +16,13 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set shiftwidth=4
 syntax enable
 map <F4> :NERDTreeToggle<CR>
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
+colorscheme archery 
+let g:indentLine_enabled = 1 
 filetype plugin indent on
 au BufNewFile, BufRead *.py
     \ set tabstop=4
@@ -50,6 +56,10 @@ EOF
 "  exec(compile(open(activate_this, "rb").read(), activate_this, 'exec'), dict(__file__=activate_this))
 "EOF
 "ignore compiled
+let g:indentLine_char ='¦' 
+let g:indentLine_first_char = '¦'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
 set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
     set wildignore+=.git\*,.hg\*,.svn\*
@@ -70,9 +80,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
+let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225,E402'
 let python_highlight_all=1
 set wildignore+=*/tmp/*,*/env/*,*.so,*.swp,*.zip
 
 set laststatus=2
-let g:airline_theme='solarized'
+let g:airline_theme="archery"
+
